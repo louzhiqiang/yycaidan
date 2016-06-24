@@ -77,23 +77,11 @@ function drawRouletteWheel() {
 		  } 
 }    
 function spin() {
-	var date_time = new Date();
-	if(window.localStorage.getItem("date_time") != date_time.toLocaleDateString()){
-		window.localStorage.setItem("used",0);
-		window.localStorage.setItem("date_time", date_time.toLocaleDateString());
-	}
-	if(window.localStorage.getItem("used") >= 2){
-		alert("迩么太巴拉很，再好吃也不能贪杯哦");
-		return false;
-	} 
+	 
 	spinAngleStart = Math.random() * 100 + 100;    
 	spinTime = 0;    
 	spinTimeTotal = Math.random() * 3 + 4 * 1000;   
 	rotateWheel();
-	if(window.localStorage.getItem("used") == "0" || !window.localStorage.getItem("used"))
-		window.localStorage.setItem("used",1);
-	else
-		window.localStorage.setItem("used",2);
 
 }    
 
